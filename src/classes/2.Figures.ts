@@ -1,0 +1,33 @@
+export interface Figure {
+  obtenerArea(): number
+}
+
+export class Square implements Figure { // clase Cuadrado
+  
+  constructor (private side: number) {}
+
+  // Forma tradicional
+  // private side: number
+  // constructor (sideArg: number){
+  //   this.side = sideArg
+  // }
+  obtenerArea () {
+    return this.side ** 2
+  }
+}
+
+export class Circle implements Figure {
+  constructor (private radius: number) {}
+
+  obtenerArea () {
+    return Math.PI * (this.radius ** 2)
+  }
+}
+
+export class Triangle implements Figure {
+  constructor (public base: number, public height: number) {}
+
+  obtenerArea (): number {
+    return (this.height * this.base) / 2
+  }
+}
